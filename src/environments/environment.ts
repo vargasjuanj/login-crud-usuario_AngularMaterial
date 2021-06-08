@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  REST_CORE: "https://backend/api/v1/"
+  //REST_CORE: "http://localhost:9001/api/v1/"
 };
 
 /*
