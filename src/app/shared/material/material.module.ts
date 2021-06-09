@@ -29,6 +29,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar'
 
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTreeModule } from '@angular/material/tree';
 
 @NgModule({
   declarations: [],
@@ -37,6 +41,7 @@ import {MatToolbarModule} from '@angular/material/toolbar'
     CdkTreeModule,
     DragDropModule,
     ScrollingModule,
+    LayoutModule,
     MatNativeDateModule,
     MatAutocompleteModule,
     MatCardModule,
@@ -51,17 +56,18 @@ import {MatToolbarModule} from '@angular/material/toolbar'
     MatInputModule,
     MatListModule,
     MatMenuModule,
+    MatPaginatorModule,
     MatProgressSpinnerModule,
     MatRadioModule,
     MatSelectModule,
     MatSidenavModule,
     MatSliderModule,
     MatSnackBarModule,
+    MatSortModule,
     MatTabsModule,
     MatTableModule,
+    MatTreeModule,
     MatToolbarModule
-
-
   ]
 })
 export class MaterialModule { }
