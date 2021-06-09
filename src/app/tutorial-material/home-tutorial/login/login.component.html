@@ -1,3 +1,25 @@
+<div id="div1" fxLayoutAlign="center center" [ngStyle]="{'height.%':100,'background':'#f5f5f5'}">
+  
+    <div id="div2"  fxFlex="30" fxLayout="column" fxLayoutAlign="none center">
+  
+        <img src="./assets/tutorial-material/usuario.png" alt="" width="50%">
+  
+        <h1>Login</h1>
+   
+       <form [formGroup]="formulario" (ngSubmit)="ingresar()">
+        <mat-form-field appearance="fill" [ngStyle]="{'width.%':100}">
+            <mat-label>Usuario</mat-label>
+            <input matInput  autocomplete="off" formControlName="usuario">
+        </mat-form-field>
 
-<p>login works!</p>
+        <mat-form-field appearance="fill"  [ngStyle]="{'width.%':100}">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" autocomplete="off" formControlName="password">
+        </mat-form-field>      
 
+        <button mat-raised-button color="primary" type="submit"[ngStyle]="{'width.%':100,'height.em':3}" [disabled]="formulario.invalid">Ingresar</button>
+
+       </form>
+    </div>
+    
+</div>
