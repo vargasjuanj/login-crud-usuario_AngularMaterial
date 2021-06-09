@@ -1,12 +1,14 @@
 <div id="div1" fxLayoutAlign="center center" [ngStyle]="{'height.%':100,'background':'#f5f5f5'}">
   
     <div id="div2"  fxFlex="30" fxLayout="column" fxLayoutAlign="none center">
-  
+        <mat-spinner *ngIf="loading"  diameter="50"></mat-spinner>
         <img src="./assets/tutorial-material/usuario.png" alt="" width="50%">
   
         <h1>Login</h1>
-   
-       <form [formGroup]="formulario" (ngSubmit)="ingresar()">
+
+        
+
+       <form *ngIf="!loading" [formGroup]="formulario" (ngSubmit)="ingresar()">
         <mat-form-field appearance="fill" [ngStyle]="{'width.%':100}">
             <mat-label>Usuario</mat-label>
             <input matInput  autocomplete="off" formControlName="usuario">

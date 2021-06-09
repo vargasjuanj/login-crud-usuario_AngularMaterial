@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "Dashboard",
+        "link": "dashboard"
+    },
+    {
+        "nombre": "Usuarios",
+        "link": "usuarios"
+    },
+    {
+        "nombre": "Reportes",
+        "link": "reportes"
+    }
+]

@@ -8,6 +8,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
+  imports:[
+    CommonModule,
+    FlexLayoutModule,
+    FormsModule,
+    MaterialModule,
+    ReactiveFormsModule
+        // RouterModule
+  ],
   exports: [
     CommonModule,
     FlexLayoutModule,
