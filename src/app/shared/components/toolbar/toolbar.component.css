@@ -1,0 +1,15 @@
+#titulo {
+    margin: auto !important;
+}
+
+#cake {
+    font-style: italic;
+    position: relative;
+    bottom: -0.1em;
+    margin-right: 0.3em;
+}
+
+#texto {
+    font-family: Kurale;
+    font-style: italic;
+}

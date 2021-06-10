@@ -1,8 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
-/*@import 'algun.css'; */
-html, body { height: 100%; }
+
+html, body { 
+    height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.spacer {
-    flex: 1 1 auto;
+.green-dark{
+
+    background: #4CAF50;
+    color :   white;
   }
+  .green-light{
+    background: #66bb6a;;
+    color: black; 
+  }
+
+  .color-primario{
+    color: #ff5722
+  }
+
+
+ /* Oculta los scrolles pero siguen funcionando */
+  ::-webkit-scrollbar {
+    display: none;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+
+

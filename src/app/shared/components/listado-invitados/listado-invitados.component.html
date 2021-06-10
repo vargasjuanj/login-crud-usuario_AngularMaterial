@@ -1,0 +1,26 @@
+<br><br><br>
+
+<div fxLayoutAlign="center">
+  <h1><b>Listado de Invitados</b></h1>
+</div>
+<mat-divider></mat-divider>
+<br>
+<div fxLayout="row wrap"
+fxLayout.xs="column"
+ fxLayoutAlign="center"
+ fxLayoutGap="20px">
+<!-- Que tan grande quier que sea cada tarjeta (20 por ciento) -->
+<div fxFlex="20"
+     fxFlex.lg="15"
+     fxFlex.sm="30"
+*ngFor="let invitado of invitados; let i = index">
+<app-tarjeta-invitado [invitado]="invitado" [index]="i" (emitirIndex)="eliminarInvitadoDeLaVista($event)"></app-tarjeta-invitado>
+
+
+
+</div>
+
+   
+</div>
+
+

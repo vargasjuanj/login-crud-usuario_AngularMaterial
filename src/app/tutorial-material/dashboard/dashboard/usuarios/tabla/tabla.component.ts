@@ -42,8 +42,11 @@ export class TablaComponent implements AfterViewInit, OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+
+
+
   cargarUsuarios() {
-    this.usuarios = this.servicioDeUsuario.cargarUsuarios()
+    this.usuarios = this.servicioDeUsuario.cargarTodos()
     this.dataSource = new MatTableDataSource(this.usuarios)
   }
 

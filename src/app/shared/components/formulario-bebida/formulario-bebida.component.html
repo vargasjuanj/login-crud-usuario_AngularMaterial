@@ -1,0 +1,219 @@
+
+
+<div fxLayoutAlign="center center" class="mb-3 mt-3">
+  <mat-form-field appearance="fill" [ngStyle.xs]="{'width.%':90}" [ngStyle]="{'width.%': 60}">
+    <mat-label>
+      <mat-icon>calculate</mat-icon> Cantidad
+    </mat-label>
+    <input matInput type="number" placeholder="" required [(ngModel)]="articulo.cantidad">
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+
+</div>
+<div  fxLayoutAlign="center" class="mb-3 mt-3">
+  <mat-form-field appearance="fill" [ngStyle.xs]="{'width.%':90}" [ngStyle]="{'width.%': 60}">
+    <mat-label>
+      <mat-icon>square_foot</mat-icon> Medida
+    </mat-label>
+
+    <mat-select required [(ngModel)]="articulo.medida">
+      <mat-option *ngFor="let medida of servicioDeDatos.medidasDeBebidas" [value]="medida">
+        {{medida}}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+</div>
+
+
+
+
+
+
+
+
+<div *ngIf="hayCantidadYMedida()"  id="radio-butons" fxLayoutAlign="center" class="mb-3 mt-3">
+  <mat-radio-group [(ngModel)]="tipoDeBebida" >
+    <mat-radio-button *ngFor="let tipo of servicioDeDatos.tiposDeBebidas" [value]="tipo" (change)="vaciarMarcaNombreYMarcaAuxiliar()">{{tipo}}
+    </mat-radio-button>
+  </mat-radio-group>
+
+</div>
+
+
+
+<div *ngIf="tipoDeBebida === 'Alcohol'" fxLayout="column" fxLayoutAlign="center" class="mb-3">
+
+  <div fxLayoutAlign="center">
+    <mat-form-field appearance="fill" [ngStyle.xs]="{'width.%':90}" [ngStyle]="{'width.%': 60}">
+      <mat-label>
+        <mat-icon>liquor</mat-icon>
+        Tipo
+      </mat-label>
+      <mat-select required [(ngModel)]="tipoDeAlcoholica" (selectionChange)="vaciarMarcaNombreYMarcaAuxiliar()">
+        <mat-option *ngFor="let tipo of servicioDeDatos.tiposDeAlcoholicas" [value]="tipo">
+          {{tipo}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+  <div fxLayoutAlign="center">
+    <mat-form-field *ngIf="tipoDeAlcoholica === 'Cerveza'" appearance="fill" [ngStyle.xs]="{'width.%':90}"
+      [ngStyle]="{'width.%': 60}">
+      <mat-label>
+        <mat-icon>branding_watermark</mat-icon>
+        Marca
+      </mat-label>
+      <mat-select required [(ngModel)]="articulo.marca">
+        <mat-option *ngFor="let marca of servicioDeDatos.marcasDeCervezas" [value]="marca">
+          {{marca}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  
+  
+  <div fxLayoutAlign="center">
+    <mat-form-field *ngIf="tipoDeAlcoholica === 'Vino'" appearance="fill" [ngStyle.xs]="{'width.%':90}"
+      [ngStyle]="{'width.%': 60}">
+      <mat-label>
+        <mat-icon>branding_watermark</mat-icon>
+        Marca
+      </mat-label>
+      <mat-select required [(ngModel)]="articulo.marca">
+        <mat-option *ngFor="let marca of servicioDeDatos.marcasDeVinos" [value]="marca">
+          {{marca}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  
+  
+  
+  <div fxLayoutAlign="center">
+    <mat-form-field *ngIf="tipoDeAlcoholica === 'Fernet'" appearance="fill" [ngStyle.xs]="{'width.%':90}"
+      [ngStyle]="{'width.%': 60}">
+      <mat-label>
+        <mat-icon>branding_watermark</mat-icon>
+        Marca
+      </mat-label>
+      <mat-select required [(ngModel)]="articulo.marca">
+        <mat-option *ngFor="let marca of servicioDeDatos.marcasDeFernets" [value]="marca">
+          {{marca}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  
+  
+  
+  
+  <div fxLayoutAlign="center">
+    <mat-form-field *ngIf="tipoDeAlcoholica === 'Aperitivo'" appearance="fill" [ngStyle.xs]="{'width.%':90}"
+      [ngStyle]="{'width.%': 60}">
+      <mat-label>
+        <mat-icon>branding_watermark</mat-icon>
+        Marca
+      </mat-label>
+      <mat-select required [(ngModel)]="articulo.marca">
+        <mat-option *ngFor="let marca of servicioDeDatos.marcasDeAperitivos" [value]="marca">
+          {{marca}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+
+
+
+
+<div *ngIf="tipoDeBebida === 'Gaseosa'" fxLayout="column" fxLayoutAlign="center" class="mb-3">
+
+
+<div fxLayoutAlign="center">
+  <mat-form-field appearance="fill" [ngStyle.xs]="{'width.%':90}" [ngStyle]="{'width.%': 60}">
+    <mat-label>
+      <mat-icon>branding_watermark</mat-icon>
+      Marca
+    </mat-label>
+    <mat-select required [(ngModel)]="articulo.marca">
+      <mat-option *ngFor="let marca of servicioDeDatos.marcasDeGaseosas" [value]="marca">
+        {{marca}}
+
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+  
+
+</div>
+
+
+
+
+<div *ngIf="tipoDeBebida === 'Jugo'" fxLayout="column" fxLayoutAlign="center" class="mb-3">
+
+<div fxLayoutAlign="center">
+  <mat-form-field  appearance="fill" [ngStyle.xs]="{'width.%':90}" [ngStyle]="{'width.%': 60}">
+    <mat-label>
+      <mat-icon>branding_watermark</mat-icon>
+      Marca
+    </mat-label>
+    <mat-select required [(ngModel)]="articulo.marca">
+      <mat-option *ngFor="let marca of servicioDeDatos.marcasDeJugos" [value]="marca">
+        {{marca}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+</div>
+
+
+
+<div  fxLayoutAlign="center">
+  <mat-form-field *ngIf="articulo.marca === 'Otra'" appearance="fill" [ngStyle.xs]="{'width.%':90}"
+  [ngStyle]="{'width.%': 60}">
+
+  <mat-label>
+    Cual?
+  </mat-label>
+  <input matInput type="text" placeholder="..." required [(ngModel)]="marcaONombreAuxiliar">
+  <!-- <mat-hint>Hint</mat-hint> -->
+</mat-form-field>
+</div>
+
+
+<mat-form-field *ngIf="hayMarca()"  class="mr-4" appearance="fill"  fxFill>
+  <mat-label>
+    <mat-icon></mat-icon> Descripción
+  </mat-label>
+
+    <textarea matInput  
+       placeholder="Opcional" [(ngModel)]="articulo.descripcion">
+    </textarea>
+ 
+       <!-- <mat-hint>Hint</mat-hint> -->
+</mat-form-field>
+
+
+
+<!-- <div  *ngIf="hayMarca()" fxLayout="column" fxLayoutAlign="start center">
+  <div fxLayoutAlign="center"><p>Seleccione una imagen</p></div>
+  <div [ngStyle.xs]="{'font-size.em':0.8}" fxLayoutAlign="center">
+    <input (change)="seleccionarFoto($event)" type="file" name="archivo">
+  </div>
+  
+</div> -->
+
+
+
+
+<button mat-raised-button fxFill   class="mt-4" (click)="desaparecerFormulario()">Cancelar</button>
+
+<button [disabled]="bloquearBoton()" fxFill mat-raised-button color="primary" class="mt-4 mb-5"
+  (click)="enviarArticulo()">Guardar</button>

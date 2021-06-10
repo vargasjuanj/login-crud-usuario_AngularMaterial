@@ -1,0 +1,16 @@
+
+
+
+.mat-radio-button~.mat-radio-button {
+    margin-left: 1em;
+}
+
+
+
+textarea{
+    margin: auto;
+}
+
+#radio-butons{
+    font-size: 1em !important;
+}

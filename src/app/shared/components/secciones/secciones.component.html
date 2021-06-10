@@ -1,0 +1,34 @@
+
+
+<div fxLayout="row" class="texto-gris fondo-blanco" id="secciones"> 
+
+
+
+    <div *ngFor="let seccion of secciones; let i = index" fxFlex="20" [ngClass]="{'texto-oscuro': seccionesEnBoolean[i] }">
+       
+        <div fxLayout="column" fxLayoutAlign="center center">
+           
+            <button mat-button class="w-100 achicar" (click)="mostrarIndicador(seccion)" [routerLink]="[rutas[i]]">   
+                <mat-icon>{{iconos[i]}}</mat-icon>
+                <p [ngStyle.xs]="{'font-size.em': 0.8}">{{seccion}}</p>      
+            </button>
+       
+        </div>
+       
+        <div *ngIf="seccionesEnBoolean[i]" class="indicador"></div>
+
+    </div>
+
+
+    <div fxFlex="20">
+
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <button mat-button class="w-100" (click)="cerrarSesion()">
+                <mat-icon>power_settings_new</mat-icon>
+                <p [ngStyle.xs]="{'font-size.em': 0.7}">Salir</p>
+            </button>
+        </div>
+        
+    </div>
+
+</div>

@@ -1,10 +1,9 @@
-
-         <div class="text-center my-5">
-            <button class="btn btn-success mx-5" (click)="cambiarTema('por-defecto')">Cambiar a Light</button> 
-            <button class="btn btn-dark" (click)="cambiarTema('dark-theme')">Cambiar a Dark</button>
-    
-    
-        </div> 
+<div class="text-center my-5">
+    <button class="btn btn-success mx-5" (click)="cambiarTema('por-defecto')">Cambiar a Light</button>
+    <button class="btn btn-dark" (click)="cambiarTema('dark-theme')">Cambiar a Dark</button>
+</div>
 <div [ngClass]="[temaDeFondo]">
-    <router-outlet></router-outlet>
-</div> 
+    <div [@animarRuta]="animarRuta(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+</div>

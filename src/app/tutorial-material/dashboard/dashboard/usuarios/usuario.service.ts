@@ -6,7 +6,9 @@ import { Usuario } from './usuario';
   providedIn: 'root'
 })
 export class UsuarioService {
-  
+
+
+
   USUARIOS: Usuario[] = [
     {usuario: "rodriguez1234", nombre: 'Pedro',apellido:'Rodriguez',sexo:'Masculino'},
     {usuario: "2021anto", nombre: 'Antonela',apellido:'Sarati',sexo:'Femenino'},
@@ -23,7 +25,7 @@ export class UsuarioService {
   
   constructor() { }
 
-  cargarUsuarios(){
+  cargarTodos(){
    // return this.USUARIOS.slice() //Este método retorna una copia de la lista de usuarios, no es la referencia
    return this.USUARIOS
   }
@@ -31,4 +33,20 @@ export class UsuarioService {
    eliminar(index: number){
     this.USUARIOS.splice(index,1)
    }
+
+   guardar(usuario: Usuario) {
+     console.log('usuario',usuario)
+   this.USUARIOS.push(usuario)
+  }
+  cargar(index: number) {
+   return  this.USUARIOS[index]
+  }
+
+  editar(usuario: Usuario, index: number) {
+   this.USUARIOS[index] = usuario
+   }
+
+
+
+
 }

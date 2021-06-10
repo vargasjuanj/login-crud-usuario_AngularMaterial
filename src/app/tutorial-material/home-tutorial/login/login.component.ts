@@ -49,7 +49,7 @@ verticalPosition: 'top'
   loginFalso(){
     this.loading = true
     setTimeout(()=>{
-    this.router.navigate(['tutorial/dashboard'])
+    this.router.navigate(['/dashboard'])
     },3000)
   }
 }
