@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>{{textosDialog[0]}}</h2>
+<mat-dialog-content class="mat-typography">
+  <h3></h3>
+</mat-dialog-content>
+<mat-dialog-actions align="end" fxLayoutAlign="space-between" class="mb-2">
+    <button mat-button color="warn" (click)="borrar()">
+        {{textosDialog[1]}}
+    </button>
+    <button mat-button  (click)="cerrar()">
+        {{textosDialog[2]}}
+    </button>
+</mat-dialog-actions>

@@ -9,6 +9,8 @@ import { ReportesComponent } from './dashboard/reportes/reportes.component';
 import { SharedModule } from '@shared/shared.module';
 import { NavegacionComponent } from './dashboard/navegacion/navegacion.component';
 import { TablaComponent } from './dashboard/usuarios/tabla/tabla.component';
+import { ConfirmComponent } from './dashboard/usuarios/confirm/confirm.component';
+import { FormComponent } from './dashboard/usuarios/form/form.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { TablaComponent } from './dashboard/usuarios/tabla/tabla.component';
     NavegacionComponent,
     UsuariosComponent,
     ReportesComponent,
-    TablaComponent
+    TablaComponent,
+    ConfirmComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,

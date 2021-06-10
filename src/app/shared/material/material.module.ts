@@ -33,7 +33,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTreeModule } from '@angular/material/tree';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [],
   exports: [
@@ -66,6 +66,7 @@ import { MatTreeModule } from '@angular/material/tree';
     MatSortModule,
     MatTabsModule,
     MatTableModule,
+    MatTooltipModule,
     MatTreeModule,
     MatToolbarModule
   ]
