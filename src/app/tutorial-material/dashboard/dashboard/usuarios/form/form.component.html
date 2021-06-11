@@ -1,6 +1,6 @@
 <div fxLayoutAlign="space-around center" class="mt-3">
 
-  <form [formGroup]="formulario"  (ngSubmit)="onSubmit()">
+  <form [formGroup]="formulario"  (ngSubmit)="guardarUsuario()">
     <mat-card>
 
       <mat-card-header fxLayoutAlign="center">
@@ -57,7 +57,7 @@
 
       </mat-card-content>
       <mat-card-actions fxLayoutAlign="space-around">
-        <button mat-raised-button color="primary" type="submit">Guardar</button>
+        <button [disabled]="formulario.invalid" mat-raised-button color="primary" type="submit">Guardar</button>
         <button mat-raised-button color="warn" (click)="volver()">Volver</button>
       </mat-card-actions>
     </mat-card>

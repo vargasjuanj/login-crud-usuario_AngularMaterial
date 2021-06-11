@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {  ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivateChild, Router } from '@angular/router';
-import { InvitadoService } from '@shared/services/invitado.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,7 +8,7 @@ import { Observable } from 'rxjs';
 export class UsuarioGuard implements  CanActivateChild {
  
 
-  constructor( private servicioDeInvitado: InvitadoService, private router: Router) { }
+  constructor( private router: Router) { }
   // canActivate(
   //   route: ActivatedRouteSnapshot,
   //   state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -18,12 +17,12 @@ export class UsuarioGuard implements  CanActivateChild {
 
 
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    if (!this.servicioDeInvitado.recuperarSesionDelLocalStorage('invitado')) {
-      alert('Inicia Sesión o registrate')
-      console.log('No estás logueado');
-      this.router.navigate(['/']);
-      return false;
-  }
+  //   if (!this.servicioDeInvitado.recuperarSesionDelLocalStorage('invitado')) {
+  //     alert('Inicia Sesión o registrate')
+  //     console.log('No estás logueado');
+  //     this.router.navigate(['/']);
+  //     return false;
+  // }
 //alert('2')
   return true;
   }

@@ -36,7 +36,7 @@ export class UsuarioService {
 
    guardar(usuario: Usuario) {
      console.log('usuario',usuario)
-   this.USUARIOS.push(usuario)
+   this.USUARIOS.unshift(usuario) //con push no se actualiza la vista, desde otro componente emitiendo un evento ahi si
   }
   cargar(index: number) {
    return  this.USUARIOS[index]

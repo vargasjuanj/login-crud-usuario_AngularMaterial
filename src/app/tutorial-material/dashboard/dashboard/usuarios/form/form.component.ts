@@ -54,14 +54,18 @@ export class FormComponent implements OnInit {
     })
   }
 
-  onSubmit(): void {
+  guardarUsuario() {
+// const usuario : Usuario ={
+//   usuario: this.formulario.value.usuario,
+//   nombre: this.formulario.value.nombre,
+//   apellido: this.formulario.value.apellido,
+//   sexo: this.formulario.value.sexo
 
+// }
     if(this.index){
-      alert('editar!');
       let index = Number(this.index)
       this.servicioDeUsuario.editar(this.formulario.value as Usuario, index)
     }else{
-      alert('guardar')
       
       this.servicioDeUsuario.guardar(this.formulario.value as Usuario)
     }
