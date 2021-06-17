@@ -2,13 +2,12 @@ import { ErrorPageComponent } from '@shared/components/error-page/error-page.com
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// En las rutas si ordenar los importas, en los modulos es mejor ordenar lo que esta dentro de corchetes para ahorrar tiempo
 
 const routes: Routes = [
 
   {
     path: '',
-    loadChildren: () => import('./tutorial-material/tutorial-material.module').then(m => m.TutorialMaterialModule)
+    loadChildren: () => import('./login-crud/login-crud.module').then(m => m.LoginCrudModule)
   },
  
   {

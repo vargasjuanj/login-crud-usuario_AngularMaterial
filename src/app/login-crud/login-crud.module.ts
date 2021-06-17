@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { TutorialMaterialRoutingModule } from './tutorial-material-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { LoginComponent } from './home-tutorial/login/login.component';
 import { HomeTutorialComponent } from './home-tutorial/home-tutorial.component';
+import { LoginCrudRoutingModule } from './login-crud-routing.module';
 
 
 @NgModule({
@@ -12,8 +12,8 @@ import { HomeTutorialComponent } from './home-tutorial/home-tutorial.component';
     LoginComponent
   ],
   imports: [
-    TutorialMaterialRoutingModule,
+    LoginCrudRoutingModule,
     SharedModule
   ]
 })
-export class TutorialMaterialModule { }
+export class LoginCrudModule { }
